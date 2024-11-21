@@ -1,0 +1,16 @@
+﻿@using MvcCv.Models.Entity
+@model List<TblHakkında>
+@{
+    ViewBag.Title = "About";
+}
+<main aria-labelledby="title">
+    <h2 id="title">@ViewBag.Title.</h2>
+    <h3>@ViewBag.Message</h3>
+    @foreach (var x in Model)
+    {
+        <div>Test : @x.Aciklama</div>
+    }
+
+
+        <p>Use this area to provide  additional information.</p>
+    </main>
