@@ -26,9 +26,11 @@
                                     @foreach (var item in Model)
                                     {
                                         <div class="time-label">
-                                            <span class="bg-success">
-                                                @item.Tarih
-                                            </span>
+                                         <a href="/Sertifikalar/SertifikaGetir/@item.ID" class="btn btn-success">
+                                             <span class="bg-success">
+                                                 @item.Tarih
+                                             </span>
+                                         </a>
                                         </div>
                                         <!-- /.timeline-label -->
                                         <!-- timeline item -->
@@ -37,10 +39,10 @@
                                                 <div class="timeline-body">
                                                     @item.Aciklama
                                                 </div>
-                                                <div class="timeline-footer">
+                                                @*<div class="timeline-footer">
                                                     <a href="#" class="btn btn-primary btn-sm">Düzenle</a>
                                                     <a href="#" class="btn btn-danger btn-sm">Sil</a>
-                                                </div>
+                                                </div>*@
                                             </div>
                                         </div>
 
@@ -49,6 +51,7 @@
                                     <!-- END timeline item -->
 
                                 </div>
+                                <a href="/Sertifikalar/YeniSertifika" class="btn btn-info">Yeni Sertifika Girişi</a>
                             </div>
                         </div>
                         <!-- /.tab-content -->
