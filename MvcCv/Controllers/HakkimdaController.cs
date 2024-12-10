@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MvcCv.Models.Entity;
+using MvcCv.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +11,27 @@ namespace MvcCv.Controllers
     public class HakkimdaController : Controller
     {
         // GET: Hakkimda
+        GenericRepositroy<TblHakkında> repo = new GenericRepositroy<TblHakkında>();
+        [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            var hakkimda = repo.List();
+            return View(hakkimda);
+        }
+        [HttpPost]
+        public ActionResult Index(TblHakkında p)
+        {
+            //TblHobilerim t = new TblHobilerim();
+            var t = repo.Find(x => x.ID == 0);
+            t.Ad = p.Ad;
+            t.Soyad = p.Soyad;
+            t.Adres = p.Adres;
+            t.Mail = p.Mail;
+            t.Telefon = p.Telefon;
+            t.Aciklama = p.Aciklama;
+            t.Resim = p.Resim;
+            repo.TUpdate(t);
+            return RedirectToAction("Index");
         }
     }
 }
