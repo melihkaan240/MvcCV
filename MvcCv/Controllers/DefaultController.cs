@@ -5,7 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using MvcCv.Models.Entity;
 namespace MvcCv.Controllers
-{
+{ 
+    [AllowAnonymous]
     public class DefaultController : Controller
     {
         // GET: Default
